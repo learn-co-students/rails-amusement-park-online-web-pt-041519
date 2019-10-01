@@ -1,6 +1,13 @@
 <h1><%= @user.name %>'s Profile</h1>
-
 <p>Current Mood: <%= @user.mood %><br>
 Height: <%= @user.height %><br>
 Nausea Level: <%= @user.nausea %><br>
 Ticket Count: <%= @user.tickets %></p>
+
+<p><%= link_to "See attractions", attractions_path %>
+
+<% if @user.admin == true %>
+<h2>ADMIN Functions</h2>
+
+
+<% end %>

@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   resources :users
 
+  get '/signin', to: 'sessions#new'
+  post '/signin', to: 'sessions#create'
+  post '/logout', to: 'sessions#destroy'
+  get '/attractions', to: 'attractions#index'
+
   resources :admin do
     resources :attractions, only: [:index, :show, :new, :edit]
   end

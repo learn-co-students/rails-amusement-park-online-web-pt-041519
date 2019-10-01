@@ -8,7 +8,9 @@ class User < ActiveRecord::Base
     validates :password_digest, presence: true
 
     def mood
-        self.happiness > self.nausea ? "happy" : "sad"
+        if !self.happiness.nil? && !self.nausea.nil?
+            self.happiness > self.nausea ? "happy" : "sad"
+        end            
     end
 
 end

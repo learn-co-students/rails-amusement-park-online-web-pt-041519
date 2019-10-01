@@ -1,27 +1,30 @@
 class UsersController < ApplicationController
+
     def new
         @user = User.new
     end
 
     def create
         @user = User.create(user_params)
+        session[:user_id] = @user.id
 
         redirect_to user_path(@user)
     end
 
     def show
-        @user = User.find_by(params[:id])
+        logged_in? 
+        @user = User.find(params[:id])
     end
 
     def destroy
-        session.destroy
+        session.clear
         redirect_to '/'
     end
 
     private
 
     def user_params
-        params.require(:user).permit(:name, :password, :nausea, :happiness, :tickets, :height)
+        params.require(:user).permit(:name, :password, :nausea, :happiness, :tickets, :height, :admin)
     end
 
 
