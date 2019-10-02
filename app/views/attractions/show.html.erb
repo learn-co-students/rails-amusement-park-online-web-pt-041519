@@ -1,0 +1,14 @@
+
+<p>Name: <%= @attraction.name %><br>
+Total Number of Users: <% %><br>
+Ticket Requirement: <%= @attraction.tickets %><br>
+Height Requirement: <%= @attraction.min_height %><br>
+Nausea Rating: <%= @attraction.nausea_rating %><br>
+Happiness Rating: <%= @attraction.happiness_rating %><br></p>
+
+
+<% if current_user.admin == true %>
+    <p><%= link_to "Edit Attraction", edit_attraction_path %></p>
+<% else %>
+    <p><%= link_to "See attractions", attractions_path %></p>
+<% end %>
