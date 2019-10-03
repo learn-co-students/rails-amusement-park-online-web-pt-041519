@@ -1,0 +1,17 @@
+<div class="container" role="main">
+<%= form_for :user, url: '/signin' do |f| %>
+<div class="form-group">
+    <%= f.label :name, "Your Name:" %>
+    <%= f.select :name, User.pluck(:name), prompt: 'Please select your username from this dropdown'%>
+</div>
+
+<div class="form-group">
+    <%= f.label :password, "Your Password:" %>
+     <%= f.password_field :password, id: "password" %><br><br>
+</div>
+
+<div class="actions">
+    <%= f.submit "Sign In" %>
+</div>
+<% end %>
+</div>
