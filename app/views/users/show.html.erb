@@ -1,13 +1,12 @@
+<%= flash[:alert] if flash[:alert] %>
+
 <h1><%= @user.name %>'s Profile</h1>
+<% if @user.admin == true %>
+    <p>ADMIN</p>
+<% end %>
 <p>Current Mood: <%= @user.mood %><br>
 Height: <%= @user.height %><br>
 Nausea Level: <%= @user.nausea %><br>
-Ticket Count: <%= @user.tickets %></p>
+Tickets: <%= @user.tickets %></p>
 
 <p><%= link_to "See attractions", attractions_path %>
-
-<% if @user.admin == true %>
-<h2>ADMIN Functions</h2>
-
-
-<% end %>
