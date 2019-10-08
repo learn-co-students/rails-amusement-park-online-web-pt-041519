@@ -1,0 +1,38 @@
+<h1>Sign Up</h1>
+<% if flash[:error] %>
+  <div class="notice"><%= flash[:error] %></div>
+<% end %>
+
+<%= form_for @user, controller: 'users', action: 'create' do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :height %>
+    <%= f.text_field :height %>
+  </div>  
+  <div>
+    <%= f.label :happiness %>
+    <%= f.text_field :happiness %>
+  </div>
+  <div>
+    <%= f.label :nausea %>
+    <%= f.text_field :nausea %>
+  </div>  
+  <div>
+    <%= f.label :tickets %>
+    <%= f.text_field :tickets %>
+  </div>
+  <div>
+    <%= f.label(:admin, "Are you a theme park owner?") %>
+    <%= f.check_box :admin %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.submit "Create User" %>
+  </div>
+<% end %>

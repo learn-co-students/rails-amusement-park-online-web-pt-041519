@@ -1,0 +1,30 @@
+<h1>New Attraction</h1>
+<% if flash[:error] %>
+  <div class="notice"><%= flash[:error] %></div>
+<% end %>
+
+<%= form_for @attraction do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label(:min_height, "Height Requirement (in inches)")  %>
+    <%= f.text_field :min_height %>
+  </div>
+  <div>
+    <%= f.label(:happiness_rating, "How fun is it?") %>
+    <%= f.text_field :happiness_rating %>
+  </div>  
+  <div>
+    <%= f.label(:nausea_rating, "How nausea-inducing is it? (1-5 scale)") %>
+    <%= f.text_field :nausea_rating %>
+  </div>
+  <div>
+    <%= f.label(:tickets, "How many tickets does it cost?") %>
+    <%= f.text_field :tickets %>
+  </div>
+  <div>
+    <%= f.submit "Create Attraction" %>
+  </div>
+<% end %>

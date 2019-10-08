@@ -1,0 +1,26 @@
+<h1><%= @user.name %></h1>
+<% if flash[:success] %>
+  <div class="notice"><%= flash[:success] %></div>
+<% end %>
+<% if flash[:error] %>
+  <div class="notice"><%= flash[:error] %></div>
+<% end %>
+<h2>Current Stats</h2>
+<ul>
+  <% if @user.admin %>
+    <li>ADMIN</li>
+  <% end %>
+  <li>Mood: <%= @user.mood %></li>
+  <li>Happiness: <%= @user.happiness %></li>
+  <li>Nausea: <%= @user.nausea %></li>  
+  <li>Tickets: <%= @user.tickets %></li>
+  <li>Height: <%= @user.height %> inches</li>
+</ul>
+
+<div>
+  <%= link_to 'See attractions', attractions_path %> 
+</div>
+
+<div>
+  <%= link_to 'Log Out', logout_path %> 
+</div>

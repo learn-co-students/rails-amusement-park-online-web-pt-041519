@@ -1,0 +1,20 @@
+<h1>Sign In</h1>
+
+<% if flash[:error] %>
+  <div class="notice"><%= flash[:error] %></div>
+<% end %>
+
+  <%= form_with url: "/signin" do |f| %>
+
+  <div>
+    <%= f.label :name %>
+    <%= select_tag "user_name", options_from_collection_for_select(User.all, :id, :name) %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.submit "Sign In" %>
+  </div>
+<% end %>
