@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :attractions, through: :rides
 
   validates :name, presence: true
-  validates :password, presence: true, on: :create
+  validates :password_digest, presence: true, on: :create
 
   validates :admin, inclusion: { in: [true, false], message: "Must be true or false."  }
 

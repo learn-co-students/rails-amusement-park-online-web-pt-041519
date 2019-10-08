@@ -43,6 +43,10 @@ class AttractionsController < ApplicationController
     @ride = Ride.new
   end
 
+  # Delete attraction
+  def delete
+  end
+
   # Activate ride. Update user and display messages.
   def ride
     ride = Ride.create(user_id: params[:ride][:user_id], attraction_id: params[:ride][:attraction_id])

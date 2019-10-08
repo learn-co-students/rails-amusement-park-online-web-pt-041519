@@ -3,6 +3,13 @@
 <% end %>
 
 <h1>Listing attractions</h1>
+
+<div>
+  <% if current_user.admin %>
+    <%= link_to "New Attraction", new_attraction_path %>
+  <% end %>
+</div>
+
 <table class="table">
   <thead>
     <tr>
@@ -25,9 +32,3 @@
     <% end %>
   </tbody>
 </table>
-
-<div>
-  <% if current_user.admin %>
-    <%= link_to "New Attraction", new_attraction_path %>
-  <% end %>
-</div>

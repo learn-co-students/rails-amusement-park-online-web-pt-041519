@@ -3,9 +3,9 @@
 <ul>
   <li>Total Number of Users: <%= @attraction.users.count %></li>
   <li>Ticket Requirement: <%= @attraction.tickets %></li>
-  <li>Height Requirement: <%= @attraction.min_height %></li>  
+  <li>Height Requirement: <%= @attraction.min_height %> inches</li>  
   <li>Nausea Rating: <%= @attraction.nausea_rating %></li>
-  <li>Happiness Rating: <%= @attraction.happiness_rating %> inches</li>
+  <li>Happiness Rating: <%= @attraction.happiness_rating %></li>
 </ul>
 
 <% if current_user && current_user.admin %>

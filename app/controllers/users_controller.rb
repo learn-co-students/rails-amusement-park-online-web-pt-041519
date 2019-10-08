@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-
+  
   # Create user
   def create
     params[:user][:admin] = "true" if params[:user][:admin] && params[:user][:admin] == "1"

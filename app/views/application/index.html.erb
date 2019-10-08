@@ -2,10 +2,10 @@
   <div class="notice"><%= flash[:error] %></div>
 <% end %>
 
-<h1>Hi, 
+<h1>Welcome,  
 <% if current_user %>
   <%= current_user.name %></h1>
 <% else %>
-  stranger.</h1>
-  <h2>Please <%= link_to "Log In", signin_path %> or <%= link_to "Sign Up", new_user_path %></h2>
+  stranger</h1>
+  <h2>Please choose a link above to access our attractions.</h2>
 <% end %>
