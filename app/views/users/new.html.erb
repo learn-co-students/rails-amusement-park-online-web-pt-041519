@@ -1,0 +1,36 @@
+<H1>Signup Below</H1>
+<%= form_for @user do |f| %>
+  <div class= 'form-control'>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class= 'form-control'>
+    <%= f.label :height, " Height (in inches)" %>
+    <%= f.text_field :height %>
+  </div>
+  <div class= 'form-control'>
+    <%= f.label :nausea %>
+    <%= f.number_field :nausea %>
+  </div>
+  <div class= 'form-control'>
+    <%= f.label :happiness %>
+    <%= f.number_field :happiness %>
+  </div>
+  <div class= 'form-control'>
+    <%= f.label :tickets %>
+    <%= f.number_field :tickets %>
+  </div>
+
+  <div class= 'form-control'>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation  %>
+  </div>
+  <div>
+    <%=f.label :admin, "Check box if you are a theme park owner:"%>
+    <%= f.check_box :admin %>
+  </div>
+
+<%= f.submit %>
+<% end %>

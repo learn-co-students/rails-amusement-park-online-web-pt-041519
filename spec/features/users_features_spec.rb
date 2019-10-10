@@ -2,11 +2,13 @@ require_relative "../rails_helper.rb"
 describe 'Feature Test: User Signup', :type => :feature do
 
   it 'successfully signs up as non-admin' do
+   
     visit '/users/new'
     expect(current_path).to eq('/users/new')
     # user_signup method is defined in login_helper.rb
     user_signup
     expect(current_path).to eq('/users/1')
+    
     expect(page).to have_content("Amy Poehler")
     expect(page).to have_content("Mood")
     expect(page).to have_content("happy")
@@ -55,6 +57,7 @@ describe 'Feature Test: User Signup', :type => :feature do
     visit '/users/new'
     expect(current_path).to eq('/users/new')
     # admin_signup method is defined in login_helper.rb
+
     admin_signup
     expect(current_path).to eq('/users/1')
     expect(page).to have_content("Walt Disney")
@@ -64,6 +67,7 @@ describe 'Feature Test: User Signup', :type => :feature do
   it "on sign up for admin, successfully adds a session hash" do
     visit '/users/new'
     # admin_signup method is defined in login_helper.rb
+    
     admin_signup
     expect(page.get_rack_session_key('user_id')).to_not be_nil
   end

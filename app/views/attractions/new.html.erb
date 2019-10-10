@@ -1,0 +1,33 @@
+<%= flash[:alert] if flash[:alert] %>
+<%= form_for @attraction, class: "new_attraction" do |f| %>
+
+<div class="form group">
+<%= f.label :name, "Name:" %>
+<%= f.text_field :name %>
+</div>
+
+<div class="form group">
+<%= f.label :min_height, "Height Requirement (in inches)"%>
+<%= f.text_field :min_height %>
+</div>
+
+<div class="form group">
+<%= f.label :happiness_rating, "How fun is it? (1-5 scale)"%>
+<%= f.text_field :happiness_rating %>
+</div>
+
+<div class="form group">
+<%= f.label :nausea_rating, "How nausea-inducing is it? (1-5 scale)" %>
+<%= f.text_field :nausea_rating %>
+</div>
+
+<div class="form group">
+<%= f.label :tickets, "How many tickets does it cost?"%>
+<%= f.text_field :tickets%>
+</div>
+
+<%= f.submit %>
+
+<%end%>
+
+<%= link_to "Back", attractions_path %>
