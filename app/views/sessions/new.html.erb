@@ -1,0 +1,18 @@
+
+
+<div class="container" role="main">
+   <%=form_for :user, url: '/signin' do |f| %>
+
+   <div class="form">
+    <%= f.label :name, "Your Name:" %>
+    <%= f.select :name, User.pluck(:name) %><br><br>
+   </div>
+
+   <div class="actions">
+    <%= f.label :password, "Your Password:" %>
+    <%= f.password_field :password, id: "password" %><br><br>
+    <%= f.submit('Sign In')%>
+   </div>
+  <%end%>
+
+</div> 
