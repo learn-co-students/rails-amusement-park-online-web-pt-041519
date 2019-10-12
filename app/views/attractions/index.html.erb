@@ -1,0 +1,34 @@
+<% if flash[:error] %>
+  <div class="notice"><%= flash[:error] %></div>
+<% end %>
+
+<h1>Listing attractions</h1>
+
+<div>
+  <% if current_user.admin %>
+    <%= link_to "New Attraction", new_attraction_path %>
+  <% end %>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Tickets</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @attractions.each do |attr| %>
+      <tr>
+        <td><%= attr.name %></td>
+        <td><%= attr.tickets %></td>
+        <% if current_user.admin %>
+          <td><%= link_to "Show #{attr.name}", attraction_path(attr) %> | <%= link_to "Edit Attraction", edit_attraction_path(attr) %></td>
+        <% else %>
+          <td><%= link_to "Go on #{attr.name}", attraction_path(attr) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

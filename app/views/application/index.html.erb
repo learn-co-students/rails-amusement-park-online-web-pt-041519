@@ -1,0 +1,11 @@
+<% if flash[:error] %>
+  <div class="notice"><%= flash[:error] %></div>
+<% end %>
+
+<h1>Welcome,  
+<% if current_user %>
+  <%= current_user.name %></h1>
+<% else %>
+  stranger</h1>
+  <h2>Please choose a link above to access our attractions.</h2>
+<% end %>
